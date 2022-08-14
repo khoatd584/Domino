@@ -1,9 +1,10 @@
 <?php
 require_once 'db/connection.php';
-
+?>
+<?php
     if (isset($_POST['signin_submit'])) {
         $username = $_POST['username'];
-        $password = ($_POST['password']);
+        $password = $_POST['password'];
 
         $sql = "SELECT * FROM users_admin WHERE username ='".$username."'AND password ='".$password."'LIMIT 1";
 
@@ -12,7 +13,7 @@ require_once 'db/connection.php';
         $count = mysqli_num_rows($row);
 
         if ($count > 0) {
-            $_SESSION['login'] = $username;
+            $_SESSION['admin'] = $username;
             header("Location: index.php");
         } else {
             echo "<script>alert('Oops! Tài khoản hoặc mật khẩu không đúng')</script>";
@@ -54,9 +55,9 @@ require_once 'db/connection.php';
             <div class="account-content">
     <form method="POST" class="account-form-sign-in" action=''>
         <div class="form-item">
-            <label class="form-label" for="email">Username</label>
+            <label class="form-label" for="username">Username</label>
             <div class="form-control">
-                <input name="username" type="text" class="form-input" id="email" required>
+                <input name="username" type="text" class="form-input" id="username" required>
             </div>
         </div>
         <div class="form-item">

@@ -2,11 +2,12 @@
 require_once 'db/connection.php';
 ?>
 <?php
-
-    if (!isset($_SESSION['signin_submit'])) {
-        header("Location: index.php");
-    }
+require_once 'db/connection.php';
+if (!isset($_SESSION['admin'])) {
+    header("Location: login.php");
+}
 ?>
+
 <?php include './module/header-admin.php' ?>
 <?php include './module/menu-admin.php' ?>
 <?php
