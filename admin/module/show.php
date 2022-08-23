@@ -14,8 +14,8 @@ $query = mysqli_query($conn, $sql);
 ?>
 <div class="content">
     <div class="panel-header">
-        <h2 class="text-white">Product Management</h2>
-        <a href="index.php?page=creat" class="btn-secondary">Add Product</a>
+        <h2 class="text-white">Quản Lý Sản Phẩm</h2>
+        <a href="index.php?page=creat" class="btn-secondary">Thêm Sản Phẩm</a>
     </div>
 
     <div class="product-body">

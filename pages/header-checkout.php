@@ -23,7 +23,7 @@
                         <a href="./index.php" class="navbar-logo">
                             <img src="./img/logo.png" alt="">
                         </a>
-                        <div class="navbar-location navbar-location-margin navbar-location-after">
+                        <!-- <div class="navbar-location navbar-location-margin navbar-location-after">
                             <ion-icon class="navbar-location--icon" name="location-outline"></ion-icon>
                             <a class="navbar-location--link navbar-location--link-margin" href="#">New York</a>
                             <ion-icon name="chevron-down-outline"></ion-icon>
@@ -47,19 +47,19 @@
                                     <a class="location-item" href="#">Miami</a>
                                 </li>
                             </ul>
-                        </div>
-                        <a href="#" class="navbar-location">Cuisine
+                        </div> -->
+                        <!-- <a href="#" class="navbar-location">Cuisine
                             <div class="navbar-location-drogdown-menu">
                                 <div class="menu-food">
                                     <img src="./img/burger.svg" alt="">
                                 </div>
                             </div>
-                        </a>
+                        </a> -->
                     </div>
                     <div class="navbar-toolbar">
-                        <div class="navbar-toolbar--icon">
+                        <!-- <div class="navbar-toolbar--icon">
                             <ion-icon class="navbar-search-icon" name="search-outline"></ion-icon>
-                        </div>
+                        </div> -->
                         <a href="./account.php" class="navbar-toolbar--icon navbar-toolbar--icon-margin">
                             <ion-icon class="navbar-user-icon js-buy-ticket" name="person-outline"></ion-icon>
                         </a>

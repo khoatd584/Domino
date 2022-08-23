@@ -4,7 +4,7 @@ $query = mysqli_query($conn,$sql);
 ?>
 <div class="content">
     <div class="panel-header">
-        <h2 class="text-white">Customer Management</h2>
+        <h2 class="text-white">Quản Lý Khách Hàng</h2>
     </div>
     <div class="product-body">
         <table class="table-striped">

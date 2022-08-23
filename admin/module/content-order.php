@@ -1,32 +1,95 @@
+<?php
+$sql = "SELECT * FROM orders,order_detail";
+$query = mysqli_query($conn, $sql);
+?>
 <div class="content">
     <div class="panel-header">
-        <h2 class="text-white">Order Management</h2>
+        <h2 class="text-white">Quản Lý Đơn Hàng</h2>
     </div>
     <div class="product-body">
         <table class="table-striped">
             <thead>
                 <tr>
-                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">STT</th>
-                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Name</th>
-                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Phone</th>
-                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">City</th>
-                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Address</th>
-                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Amount</th>
+                    <th>Tên</th>
+                    <th>SDT</th>
+                    <th>Email</th>
+                    <th>Địa chỉ</th>
+                    <th>Thời gian giao</th>
+                    <th>Ghi chú</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Tổng tiền</th>
+                    <th>PTTT</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="odd">
-                    <td>01</td>
-                    <td>
-                        Nguyen Hoang Tuan
-                    </td>
-                    <td>
-                        0763038603
-                    </td>
-                    <td>Can Tho</td>
-                    <td>Nguyen van Linh</td>
-                    <td>02</td>
-                </tr>
+                <?php
+                $i = 1;
+                while ($row = mysqli_fetch_assoc($query)) { ?>
+                        <td style="color: #999;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem;"><?= $row['name'] ?>
+                        </td>
+                        <td style="color: #999;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem;"><?= $row['phone'] ?></td>
+    <td style="color: #999;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem;"><?= $row['email'] ?></td>
+                        <td style="color: #999;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem;"><?= $row['address'] ?></td>
+                        <td style="color: #999;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem;"><?= $row['time'] ?></td>
+                        <td style="color: #999;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem;"><?= $row['note'] ?></td>
+    <td style="color: #999;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem;"><?= $row['name_pro'] ?></td>
+                        <td style="color: #999;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem;"><?= $row['quantity'] ?></td>
+    <td style="color: #999;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem;"><?= $row['total'] ?></td>
+    <td style="color: #999;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem;"><?= $row['ship'] ?></td>
+                    </tr>
+                <?php }
+                ?>
             </tbody>
         </table>
     </div>

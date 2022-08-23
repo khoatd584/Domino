@@ -2,11 +2,12 @@
 
 $err = [];
 if (isset($_POST['signup_submit'])) {
+
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $rPassword = $_POST['rPassword'];
-
+    
     if (empty($name)) {
         $err['name'] = 'Ban chua nhap ten';
     }
@@ -27,6 +28,7 @@ if (isset($_POST['signup_submit'])) {
             header('location: ././sign-in.php');
         }
     }
+    $_SESSION['id'] = mysqli_insert_id($conn);
 }
 ?>
 <div class="account-content">

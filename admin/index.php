@@ -2,7 +2,6 @@
 require_once 'db/connection.php';
 ?>
 <?php
-require_once 'db/connection.php';
 if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
 }

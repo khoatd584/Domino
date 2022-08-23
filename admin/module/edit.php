@@ -9,14 +9,14 @@ $row_up = mysqli_fetch_array($query_up);
 if(isset($_POST['submit'])){
     $news_name = $_POST['news_name'];
 
- if($_FILES['news_image']['name'] ==''){
-        $news_image = $row_up['news_image'];
+//  if($_FILES['news_image']['name'] ==''){
+//         $news_image = $row_up['news_image'];
 
-       }else {
-        $news_image = $_FILES['news_image'];
-        $news_image_tmp = $_FILES['news_image']['tmp_name'];
-        move_uploaded_file($news_image_tmp, './image/'.$news_image);
-       }
+//        }else {
+//         $news_image = $_FILES['news_image'];
+//         $news_image_tmp = $_FILES['news_image']['tmp_name'];
+//         move_uploaded_file($news_image_tmp, './image/'.$news_image);
+//        }
     
    $news_ingredient = $_POST['news_ingredient'];
     $news_price = $_POST['news_price'];
@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
 // VALIDATE FORM
 if(
    $news_name  == ""|| 
-   $news_image  == ""||
+//    $news_image  == ""||
    $news_ingredient == ""||
    $news_price  == ""|| 
    $news_quantity  == ""
@@ -47,7 +47,7 @@ die;
 
 $sql = "UPDATE news SET
  news_name='$news_name',
- news_image='$news_image',
+--  news_image='$news_image',
  news_ingredient='$news_ingredient',
  news_price='$news_price',
  news_quantity='$news_quantity'
@@ -71,11 +71,6 @@ header('location:index.php');
         <div class="form-group">
             <label class="form-label" for="name">Name</label>
             <input type="text" value="<?= $row_up['news_name'] ?>" name="news_name" id="" class="form-input"
-                placeholder="" aria-describedby="helpId">
-        </div>
-        <div class="form-group">
-            <label class="form-label" for="image">Image</label>
-            <input type="file" value="<?= $row_up['news_image'] ?>" name="news_image" id="" class="form-input"
                 placeholder="" aria-describedby="helpId">
         </div>
         <div class="form-group">
